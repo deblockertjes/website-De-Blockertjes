@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="hero" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#fff8ee"/>
+      <stop offset="50%" stop-color="#f4e0be"/>
+      <stop offset="100%" stop-color="#9ab8a4"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#hero)"/>
+  <rect x="76" y="76" width="1048" height="478" rx="42" fill="#ffffff" opacity=".75"/>
+  <rect x="116" y="120" width="180" height="180" rx="44" fill="#ebb562"/>
+  <circle cx="180" cy="185" r="30" fill="#fff8ee"/>
+  <circle cx="235" cy="185" r="30" fill="#fff8ee"/>
+  <path d="M145 248c20-26 42-38 63-38 22 0 44 12 64 38" fill="none" stroke="#fff8ee" stroke-linecap="round" stroke-width="18"/>
+  <text x="340" y="232" font-family="Trebuchet MS, Segoe UI, sans-serif" font-size="72" font-weight="700" fill="#24443c">De Blockertjes</text>
+  <text x="340" y="312" font-family="Trebuchet MS, Segoe UI, sans-serif" font-size="34" fill="#1f2c2a">Warm welkom voor gemeenschap, catechese en verbondenheid</text>
+</svg>

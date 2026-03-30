@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 320" role="img" aria-labelledby="logoTitle logoDesc">
+  <title id="logoTitle">De Blockertjes logo placeholder</title>
+  <desc id="logoDesc">Warm en vriendelijk placeholderlogo voor De Blockertjes.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#f4e0be"/>
+      <stop offset="55%" stop-color="#ebb562"/>
+      <stop offset="100%" stop-color="#d9715b"/>
+    </linearGradient>
+  </defs>
+  <rect width="320" height="320" rx="80" fill="url(#bg)"/>
+  <circle cx="112" cy="120" r="34" fill="#fff8ee"/>
+  <circle cx="208" cy="120" r="34" fill="#fff8ee"/>
+  <path d="M82 214c18-32 52-48 78-48s60 16 78 48" fill="none" stroke="#fff8ee" stroke-linecap="round" stroke-width="22"/>
+  <path d="M98 94c18-22 40-33 62-33s44 11 62 33" fill="none" stroke="#24443c" stroke-linecap="round" stroke-width="16" opacity=".9"/>
+  <text x="160" y="286" text-anchor="middle" font-family="Trebuchet MS, Segoe UI, sans-serif" font-size="34" font-weight="700" fill="#24443c">DB</text>
+</svg>

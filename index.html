@@ -1,23 +1,144 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-    <meta charset="UTF-8">
-    <title>De Blockertjes</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            background-color: #f5f5f5;
-        }
-        h1 {
-            margin-top: 50px;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>De Blockertjes | Warm welkom voor onze gemeenschap</title>
+  <meta name="description" content="Welkom bij De Blockertjes. Ontdek wie we zijn, volg ons op social media en lees meer over onze catechese.">
+  <meta property="og:title" content="De Blockertjes">
+  <meta property="og:description" content="Een warm, modern en toegankelijk thuis voor De Blockertjes.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="/">
+  <meta property="og:image" content="assets/images/og-image.svg">
+  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Spring naar inhoud</a>
 
-<h1>Welkom op De Blockertjes 🎉</h1>
-<p>Onze website komt binnenkort online! Test</p>
+  <header class="site-header">
+    <nav class="nav-shell" aria-label="Hoofdnavigatie">
+      <a class="brand" href="./">
+        <img class="brand__logo" src="assets/images/logo-de-blockertjes.jpg" alt="Logo van De Blockertjes">
+        <span class="brand__text">
+          <strong>De Blockertjes</strong>
+          <span>Samen groeien, beleven en verbinden</span>
+        </span>
+      </a>
 
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-menu">
+        <span class="nav-toggle__label">Menu</span>
+        <span class="nav-toggle__icon" aria-hidden="true"></span>
+      </button>
+
+      <div class="nav-links" id="primary-menu">
+        <a class="nav-links__item nav-links__item--active" href="./" aria-current="page">Home</a>
+        <a class="nav-links__item" href="over-ons/">Over ons</a>
+        <a class="nav-links__item" href="social-media/">Social media</a>
+        <a class="nav-links__item" href="catechese/">Catechese</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main-content">
+    <section class="hero">
+      <div class="hero__content surface-card surface-card--hero">
+        <p class="eyebrow">Welkom bij De Blockertjes</p>
+        <div class="hero__art" aria-hidden="true">
+          <img class="hero__cube" src="assets/images/logo-block-transparent.png" alt="">
+        </div>
+        <h1>Een warme plek voor geloof, ontmoeting en gedeelde momenten</h1>
+        <p class="hero__intro">
+          De Blockertjes brengt familie, gemeenschap en catechese samen in een vriendelijke en toegankelijke omgeving.
+          Hier vind je snel wie we zijn, wat we doen en waar je ons kan volgen.
+        </p>
+        <div class="button-row">
+          <a class="button button--primary" href="over-ons/">Leer ons kennen</a>
+          <a class="button button--secondary" href="catechese/">Ontdek catechese</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--highlight">
+      <div class="section-heading">
+        <p class="eyebrow">Uitgelicht</p>
+        <h2>Laatste focus: onze catechese</h2>
+        <p>Een flexibele plek waar toekomstige updates, downloads, foto's en praktische info eenvoudig kunnen worden toegevoegd.</p>
+      </div>
+
+      <article class="feature-banner surface-card">
+        <div>
+          <h3>Samen leren, samen beleven</h3>
+          <p>
+            Op de catechesepagina bouwen we ruimte voor activiteiten, nieuws en materiaal dat later gemakkelijk uitbreidbaar blijft.
+          </p>
+        </div>
+        <a class="button button--primary" href="catechese/">Ga naar catechese</a>
+      </article>
+    </section>
+
+    <section class="section">
+      <div class="section-heading">
+        <p class="eyebrow">Snel naar</p>
+        <h2>Ontdek de verschillende delen van de site</h2>
+        <p>Elke pagina heeft een eigen mapstructuur, zodat de site netjes en toekomstbestendig blijft voor GitHub Pages of latere subdomeinen.</p>
+      </div>
+
+      <div class="card-grid">
+        <article class="surface-card info-card">
+          <p class="card-icon" aria-hidden="true">Over ons</p>
+          <h3>Over ons</h3>
+          <p>Maak kennis met wie De Blockertjes zijn, wat we doen en waar we voor staan.</p>
+          <a class="text-link" href="over-ons/">Lees meer</a>
+        </article>
+
+        <article class="surface-card info-card">
+          <p class="card-icon" aria-hidden="true">Social</p>
+          <h3>Social media</h3>
+          <p>Volg onze verhalen, video's en updates via YouTube en TikTok.</p>
+          <a class="text-link" href="social-media/">Bekijk onze kanalen</a>
+        </article>
+
+        <article class="surface-card info-card">
+          <p class="card-icon" aria-hidden="true">Catechese</p>
+          <h3>Catechese</h3>
+          <p>Vind een groeiplek voor catechese-informatie, activiteiten en praktische details.</p>
+          <a class="text-link" href="catechese/">Open de pagina</a>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <div>
+        <img class="site-footer__logo" src="assets/images/logo-de-blockertjes.jpg" alt="Logo van De Blockertjes">
+        <p class="site-footer__text">
+          De Blockertjes is een warme, uitnodigende plek waar gemeenschap, geloof en verbondenheid samenkomen.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="site-footer__title">Snel naar</h2>
+        <ul class="footer-links">
+          <li><a href="./">Home</a></li>
+          <li><a href="over-ons/">Over ons</a></li>
+          <li><a href="social-media/">Social media</a></li>
+          <li><a href="catechese/">Catechese</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h2 class="site-footer__title">Volg ons</h2>
+        <ul class="footer-links">
+          <li><a href="https://www.youtube.com/@DeBlockertjes" target="_blank" rel="noreferrer">YouTube</a></li>
+          <li><a href="https://www.tiktok.com/@deblockertjes" target="_blank" rel="noreferrer">TikTok</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="site-footer__meta">&copy; 2026 De Blockertjes. Alle rechten voorbehouden.</p>
+  </footer>
+
+  <script src="assets/js/script.js"></script>
 </body>
 </html>
