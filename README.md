@@ -19,6 +19,7 @@ Een eenvoudige, statische en mobielvriendelijke website voor GitHub Pages, opgeb
 |   |-- js/
 |   |   `-- script.js
 |   `-- images/
+|       |-- favicon.png
 |       |-- favicon.svg
 |       |-- logo-de-blockertjes.jpg
 |       |-- logo-de-blockertjes.svg
