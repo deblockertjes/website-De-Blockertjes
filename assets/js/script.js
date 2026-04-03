@@ -46,3 +46,29 @@ if (revealItems.length) {
     revealObserver.observe(item);
   });
 }
+
+const randomHeroSections = document.querySelectorAll("[data-hero-images]");
+
+randomHeroSections.forEach((section) => {
+  const imageList = section.dataset.heroImages
+    ?.split(",")
+    .map((item) => item.trim())
+    .filter(Boolean);
+
+  if (!imageList?.length) {
+    return;
+  }
+
+  const chosenImage = imageList[Math.floor(Math.random() * imageList.length)];
+
+  if (section.classList.contains("page-hero--image")) {
+    section.style.backgroundImage = `linear-gradient(180deg, rgba(23, 36, 45, 0.08), rgba(23, 36, 45, 0.18)), url("${chosenImage}")`;
+    return;
+  }
+
+  const heroImage = section.querySelector(".content-image--intro");
+
+  if (heroImage) {
+    heroImage.src = chosenImage;
+  }
+});

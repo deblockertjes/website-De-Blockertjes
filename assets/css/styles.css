@@ -433,6 +433,25 @@ p {
 
 .content-image--intro {
   max-width: 16rem;
+  box-shadow: var(--shadow-card);
+}
+
+.content-image--card {
+  max-width: none;
+  margin: 0;
+}
+
+.content-card--media {
+  overflow: hidden;
+  padding: 0;
+}
+
+.content-card__media {
+  padding: 1.2rem 1.2rem 0;
+}
+
+.content-card__body {
+  padding: 1.2rem;
 }
 
 .content-list {
@@ -580,6 +599,24 @@ p {
 
 .page-hero {
   padding: 0.4rem 0 1.4rem;
+}
+
+.page-hero--image {
+  overflow: hidden;
+  padding: 1.2rem;
+  border-radius: var(--radius-lg);
+  background:
+    linear-gradient(180deg, rgba(23, 36, 45, 0.08), rgba(23, 36, 45, 0.18)),
+    url("../images/catechese_home.jpg") center/cover no-repeat;
+  box-shadow: var(--shadow-soft);
+}
+
+.page-hero__panel {
+  margin-bottom: 0;
+  padding: 1.35rem;
+  border-radius: var(--radius-md);
+  background: rgba(248, 250, 252, 0.76);
+  backdrop-filter: blur(6px);
 }
 
 .breadcrumbs {
@@ -764,6 +801,21 @@ p {
     margin: 0;
   }
 
+  .content-card--media {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(18rem, 24rem);
+    align-items: stretch;
+  }
+
+  .content-card__media {
+    order: 2;
+    padding: 1.2rem 1.2rem 1.2rem 0;
+  }
+
+  .content-card__body {
+    order: 1;
+  }
+
   .partner-card {
     grid-template-columns: 1fr;
   }
@@ -792,5 +844,14 @@ p {
 
   .page-hero {
     padding-bottom: 1.8rem;
+  }
+
+  .page-hero--image {
+    padding: 1.6rem;
+  }
+
+  .page-hero__panel {
+    max-width: 42rem;
+    padding: 1.7rem;
   }
 }
