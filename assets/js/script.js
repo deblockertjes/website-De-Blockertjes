@@ -1,5 +1,36 @@
 const navToggle = document.querySelector(".nav-toggle");
 const navLinks = document.querySelector(".nav-links");
+const navItems = document.querySelectorAll(".nav-links__item");
+
+if (navItems.length) {
+  const currentPath = window.location.pathname.toLowerCase();
+  let activeItem = null;
+  let longestMatchLength = -1;
+
+  navItems.forEach((item) => {
+    item.classList.remove("nav-links__item--active");
+    item.removeAttribute("aria-current");
+
+    const href = item.getAttribute("href");
+
+    if (!href) {
+      return;
+    }
+
+    const resolvedPath = new URL(href, window.location.href).pathname.toLowerCase();
+    const isMatch = currentPath === resolvedPath || currentPath.startsWith(resolvedPath);
+
+    if (isMatch && resolvedPath.length > longestMatchLength) {
+      activeItem = item;
+      longestMatchLength = resolvedPath.length;
+    }
+  });
+
+  if (activeItem) {
+    activeItem.classList.add("nav-links__item--active");
+    activeItem.setAttribute("aria-current", "page");
+  }
+}
 
 if (navToggle && navLinks) {
   const closeMenu = () => {
@@ -72,3 +103,176 @@ randomHeroSections.forEach((section) => {
     heroImage.src = chosenImage;
   }
 });
+
+const planningRoot = document.querySelector("#planning-root");
+const planningDataScript = document.querySelector("#planning-data");
+
+if (planningRoot && planningDataScript) {
+  const monthMap = {
+    januari: 0,
+    februari: 1,
+    maart: 2,
+    april: 3,
+    mei: 4,
+    juni: 5,
+    juli: 6,
+    augustus: 7,
+    september: 8,
+    oktober: 9,
+    november: 10,
+    december: 11
+  };
+
+  const typeClassMap = {
+    catechese: "planning-badge--catechese",
+    eucharistie: "planning-badge--eucharistie",
+    voorbereiding: "planning-badge--voorbereiding",
+    vormsel: "planning-badge--vormsel"
+  };
+
+  const parseDutchDate = (value) => {
+    const match = value.trim().toLowerCase().match(/^(\d{1,2})\s+([a-z]+)\s+(\d{4})$/);
+
+    if (!match) {
+      return null;
+    }
+
+    const [, day, monthName, year] = match;
+    const monthIndex = monthMap[monthName];
+
+    if (monthIndex === undefined) {
+      return null;
+    }
+
+    return new Date(Number(year), monthIndex, Number(day));
+  };
+
+  const slugify = (value) =>
+    value
+      .toLowerCase()
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/^-+|-+$/g, "");
+
+  const today = new Date();
+  const referenceDate = new Date(today.getFullYear(), today.getMonth(), today.getDate());
+  const planningItems = JSON.parse(planningDataScript.textContent).map((item) => {
+    const parsedDate = parseDutchDate(item.datum);
+    return {
+      ...item,
+      parsedDate,
+      isPast: parsedDate ? parsedDate < referenceDate : false
+    };
+  });
+
+  const groupedByMonth = planningItems.reduce((groups, item) => {
+    const key = item.parsedDate
+      ? new Intl.DateTimeFormat("nl-BE", { month: "long", year: "numeric" }).format(item.parsedDate)
+      : "Onbekende datum";
+
+    if (!groups.has(key)) {
+      groups.set(key, []);
+    }
+
+    groups.get(key).push(item);
+    return groups;
+  }, new Map());
+
+  groupedByMonth.forEach((items, monthLabel) => {
+    const monthSection = document.createElement("section");
+    monthSection.className = "planning-month";
+
+    const monthHeader = document.createElement("div");
+    monthHeader.className = "planning-month__header";
+
+    const monthTitle = document.createElement("h3");
+    monthTitle.className = "planning-month__title";
+    monthTitle.textContent = monthLabel.charAt(0).toUpperCase() + monthLabel.slice(1);
+    monthHeader.appendChild(monthTitle);
+
+    if (items.some((item) => !item.isPast)) {
+      const monthHint = document.createElement("span");
+      monthHint.className = "planning-month__hint";
+      monthHint.textContent = "Volgende momenten";
+      monthHeader.appendChild(monthHint);
+    }
+
+    monthSection.appendChild(monthHeader);
+
+    const monthList = document.createElement("div");
+    monthList.className = "planning-list";
+
+    items.forEach((item) => {
+      const article = document.createElement("article");
+      article.className = `planning-item ${item.isPast ? "planning-item--past" : "planning-item--upcoming"}`;
+
+      const top = document.createElement("div");
+      top.className = "planning-item__top";
+
+      const dateBlock = document.createElement("div");
+      dateBlock.className = "planning-item__date";
+
+      const day = document.createElement("span");
+      day.className = "planning-item__day";
+      day.textContent = item.dag;
+      dateBlock.appendChild(day);
+
+      const date = document.createElement("span");
+      date.textContent = item.datum;
+      dateBlock.appendChild(date);
+      top.appendChild(dateBlock);
+
+      const statusBadge = document.createElement("span");
+      statusBadge.className = `planning-badge ${item.isPast ? "planning-badge--status-past" : "planning-badge--status-upcoming"}`;
+      statusBadge.textContent = item.isPast ? "Voorbij" : "Komt eraan";
+      top.appendChild(statusBadge);
+      article.appendChild(top);
+
+      const meta = document.createElement("div");
+      meta.className = "planning-item__meta";
+
+      const time = document.createElement("div");
+      time.className = "planning-item__time";
+      time.textContent = item.uur;
+      meta.appendChild(time);
+
+      const titleRow = document.createElement("div");
+      titleRow.className = "planning-item__title-row";
+
+      const title = document.createElement("h4");
+      title.className = "planning-item__title";
+      title.textContent = item.type || item.omschrijving || "Activiteit";
+      titleRow.appendChild(title);
+
+      if (item.type) {
+        const typeBadge = document.createElement("span");
+        const typeSlug = slugify(item.type);
+        const mappedClass = Object.entries(typeClassMap).find(([key]) => typeSlug.startsWith(key))?.[1] || "planning-badge--type";
+        typeBadge.className = `planning-badge ${mappedClass}`;
+        typeBadge.textContent = item.type;
+        titleRow.appendChild(typeBadge);
+      }
+
+      meta.appendChild(titleRow);
+
+      if (item.omschrijving) {
+        const description = document.createElement("p");
+        description.className = "planning-item__description";
+        description.textContent = item.omschrijving;
+        meta.appendChild(description);
+      }
+
+      const place = document.createElement("p");
+      place.className = "planning-item__place";
+      place.innerHTML = `<strong>Plaats:</strong> ${item.plaats}`;
+      meta.appendChild(place);
+
+      article.appendChild(meta);
+      monthList.appendChild(article);
+    });
+
+    monthSection.appendChild(monthList);
+    planningRoot.appendChild(monthSection);
+  });
+}
