@@ -3,17 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Over ons | De Blockertjes</title>
-  <meta name="description" content="Lees meer over wie De Blockertjes zijn en wat vanuit ons gezin groeit.">
-  <meta property="og:title" content="Over ons | De Blockertjes">
-  <meta property="og:description" content="Maak kennis met het warme verhaal achter De Blockertjes.">
+  <title>Strijders | De Blockertjes</title>
+  <meta name="description" content="Een ereplek voor alle vormelingen die bij onze catechese gevolgd en gevormd zijn.">
+  <meta property="og:title" content="Strijders | De Blockertjes">
+  <meta property="og:description" content="Een ereplek voor alle vormelingen die bij onze catechese gevolgd en gevormd zijn.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="/over-ons/">
+  <meta property="og:url" content="/strijders/">
   <meta property="og:image" content="../assets/images/logo-de-blockertjes.jpg">
   <link rel="icon" href="../assets/images/favicon.png" type="image/png">
   <link rel="stylesheet" href="../assets/css/styles.css">
 </head>
-<body>
+<body class="page--strijders">
   <a class="skip-link" href="#main-content">Spring naar inhoud</a>
 
   <header class="site-header">
@@ -32,8 +32,9 @@
       </button>
 
       <div class="nav-links" id="primary-menu">
+        <a class="nav-links__item nav-links__item--secret" href="./">SECRET Strijders</a>
         <a class="nav-links__item" href="../">Home</a>
-        <a class="nav-links__item" href="./">Over ons</a>
+        <a class="nav-links__item" href="../over-ons/">Over ons</a>
         <a class="nav-links__item" href="../social-media/">Social media</a>
         <a class="nav-links__item" href="../catechese/">Catechese</a>
         <a class="nav-links__item" href="../catechese/mini-jezusjes/">Mini Jezusjes</a>
@@ -42,27 +43,35 @@
   </header>
 
   <main id="main-content" class="page-main">
-    <section class="page-hero page-hero--with-image">
-      <div class="section-heading section-heading--left section-heading--with-image">
-        <div>
-          <p class="eyebrow">Over ons</p>
-          <h1>Over ons</h1>
-          <p>
-            Wij zijn De Blockertjes: een gezinnetje dat graag samen creatief bezig is en vanuit het geloof kleine, warme initiatieven deelt.
-          </p>
-        </div>
-        <img class="content-image content-image--intro content-image--large" src="../over_ons2.png" alt="Groepsfoto van De Blockertjes in South Park stijl">
+    <section class="page-hero">
+      <div class="section-heading section-heading--left">
+        <p class="eyebrow">Strijders</p>
+        <h1>Strijders van onze catechese</h1>
+        <p>
+          Deze pagina brengt iedereen samen die bij onze catechese is meegegroeid en gevormd. Hier vieren we de inzet, de stappen in het geloof en de warme momenten van elke vormeling die deze weg met ons heeft gelopen.
+        </p>
       </div>
     </section>
 
-    <section class="stack-grid stack-grid--single">
+    <section class="card-grid">
       <article class="surface-card content-card">
+        <h2>Voor iedereen die gevormd is</h2>
         <p>
-          Wat we maken en doen, groeit gewoon uit ons gezin. We houden van eenvoud, van samen dingen creëren, en van kleine ideeën die iets moois kunnen betekenen voor anderen.
+          Strijders zijn de jongeren die zich hebben laten vormen, die hebben meegedacht, gebeden en geluisterd. Deze pagina is een stille hulde aan jullie durf en jullie reis.
         </p>
         <p>
-          Via De Blockertjes delen we stukjes van ons leven, onze catechese-ervaring en eenvoudige geloofsvolle projectjes die dicht bij ons hart liggen.
+          Je kan deze pagina later uitbreiden met namen, foto’s, een terugblik of een dankwoord voor alle vormelingen en hun families.
         </p>
+      </article>
+
+      <article class="surface-card content-card">
+        <h2>Wat kan hier later komen?</h2>
+        <ul>
+          <li>Een overzicht van de vormingsjaren</li>
+          <li>Een dankwoord aan alle vormelingen</li>
+          <li>Foto's van de vormselmomenten</li>
+          <li>Een korte tekst over wat het vormt voor onze gemeenschap</li>
+        </ul>
       </article>
     </section>
   </main>
@@ -71,14 +80,14 @@
     <div class="site-footer__inner">
       <div>
         <img class="site-footer__logo" src="../assets/images/logo-de-blockertjes.jpg" alt="Logo van De Blockertjes">
-        <p class="site-footer__text">De Blockertjes blijft groeien als een warme plaats voor ontmoeting, geloof en gemeenschap.</p>
+        <p class="site-footer__text">Deze pagina hoort bij de familie van De Blockertjes, ook al staat ze niet in het hoofdmenu.</p>
       </div>
 
       <div>
         <h2 class="site-footer__title">Pagina's</h2>
         <ul class="footer-links">
           <li><a href="../">Home</a></li>
-          <li><a href="./">Over ons</a></li>
+          <li><a href="../over-ons/">Over ons</a></li>
           <li><a href="../social-media/">Social media</a></li>
           <li><a href="../catechese/">Catechese</a></li>
           <li><a href="../catechese/mini-jezusjes/">Mini Jezusjes</a></li>
@@ -97,5 +106,31 @@
   </footer>
 
   <script src="../assets/js/script.js"></script>
+  <script>
+    (function() {
+      if (!document.body.classList.contains('page--strijders')) {
+        return;
+      }
+
+      const accessKey = 'strijdersAccessGranted';
+      const allowedCode = 'STRIJDERS';
+
+      if (sessionStorage.getItem(accessKey) === 'true') {
+        return;
+      }
+
+      const code = window.prompt('Geef de toegangscode om toegang te krijgen tot Strijders:');
+      if (code && code.trim().toUpperCase() === allowedCode) {
+        sessionStorage.setItem(accessKey, 'true');
+        return;
+      }
+
+      window.alert('Verkeerde code. Je wordt teruggestuurd naar de startpagina.');
+      const fallbackUrl = document.referrer && document.referrer.startsWith(window.location.origin)
+        ? document.referrer
+        : '../';
+      window.location.href = fallbackUrl;
+    })();
+  </script>
 </body>
 </html>
