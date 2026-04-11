@@ -2,35 +2,6 @@ const navToggle = document.querySelector(".nav-toggle");
 const navLinks = document.querySelector(".nav-links");
 const navItems = document.querySelectorAll(".nav-links__item");
 
-const checkStrijdersAccess = () => {
-  const isStrijdersPage = document.body.classList.contains("page--strijders") || window.location.pathname.toLowerCase().includes("/strijders");
-  if (!isStrijdersPage) {
-    return;
-  }
-
-  const accessKey = "strijdersAccessGranted";
-  const allowedCode = "1971";
-
-  if (sessionStorage.getItem(accessKey) === "true") {
-    return;
-  }
-
-  const code = window.prompt("Geef de toegangscode om toegang te krijgen tot Strijders:");
-
-  if (code && code.trim().toUpperCase() === allowedCode) {
-    sessionStorage.setItem(accessKey, "true");
-    return;
-  }
-
-  window.alert("Verkeerde code. Je wordt teruggestuurd naar de startpagina.");
-  const fallbackUrl = document.referrer && document.referrer.startsWith(window.location.origin)
-    ? document.referrer
-    : "../";
-  window.location.href = fallbackUrl;
-};
-
-checkStrijdersAccess();
-
 if (navItems.length) {
   const currentPath = window.location.pathname.toLowerCase();
   let activeItem = null;

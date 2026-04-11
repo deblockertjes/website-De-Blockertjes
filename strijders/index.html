@@ -106,31 +106,5 @@
   </footer>
 
   <script src="../assets/js/script.js"></script>
-  <script>
-    (function() {
-      if (!document.body.classList.contains('page--strijders')) {
-        return;
-      }
-
-      const accessKey = 'strijdersAccessGranted';
-      const allowedCode = '1971';
-
-      if (sessionStorage.getItem(accessKey) === 'true') {
-        return;
-      }
-
-      const code = window.prompt('Geef de toegangscode om toegang te krijgen tot Strijders:');
-      if (code && code.trim().toUpperCase() === allowedCode) {
-        sessionStorage.setItem(accessKey, 'true');
-        return;
-      }
-
-      window.alert('Verkeerde code. Je wordt teruggestuurd naar de startpagina.');
-      const fallbackUrl = document.referrer && document.referrer.startsWith(window.location.origin)
-        ? document.referrer
-        : '../';
-      window.location.href = fallbackUrl;
-    })();
-  </script>
 </body>
 </html>
