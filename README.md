@@ -23,6 +23,7 @@ Een eenvoudige, statische en mobielvriendelijke website voor GitHub Pages, opgeb
 |       |-- favicon.svg
 |       |-- logo-de-blockertjes.jpg
 |       |-- logo-de-blockertjes.svg
+|       |-- over_ons.png
 |       `-- og-image.svg
 `-- README.md
 ```
