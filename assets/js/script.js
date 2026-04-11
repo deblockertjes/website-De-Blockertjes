@@ -9,7 +9,7 @@ const checkStrijdersAccess = () => {
   }
 
   const accessKey = "strijdersAccessGranted";
-  const allowedCode = "STRIJDERS";
+  const allowedCode = "1971";
 
   if (sessionStorage.getItem(accessKey) === "true") {
     return;
