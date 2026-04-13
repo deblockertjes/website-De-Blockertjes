@@ -104,6 +104,43 @@ randomHeroSections.forEach((section) => {
   }
 });
 
+const heroQuote = document.querySelector(".hero-quote");
+
+if (heroQuote) {
+  const sundayQuote = {
+    text: "De sabbat is gemaakt voor de mens, maar de mens niet voor de sabbat.",
+    ref: "Marcus 2:27"
+  };
+
+  const quotes = [
+    { text: "Verkondig te pas en te onpas. Zo nodig ook met woorden.", ref: "2 Timoteüs 4:2" },
+    { text: "Geef aan de keizer wat de keizer toekomt, en aan God wat God toekomt.", ref: "Matteüs 22:21" },
+    { text: "Wees niet bang, want Ik ben met jou.", ref: "Jesaja 41:10" },
+    { text: "Liefde is geduldig en vriendelijk.", ref: "1 Korintiërs 13:4" },
+    { text: "Ik kan alles aan door Hem die mij kracht geeft.", ref: "Filippenzen 4:13" },
+    { text: "Heb je naaste lief als jezelf.", ref: "Marcus 12:31" },
+    { text: "Zalig de zachtmoedigen, want zij zullen de aarde bezitten.", ref: "Matteüs 5:5" },
+    { text: "Doe aan anderen wat je wilt dat zij jou doen.", ref: "Lucas 6:31" },
+    { text: "Want bij God is niets onmogelijk.", ref: "Lucas 1:37" },
+    { text: "Zoek eerst het koninkrijk van God.", ref: "Matteüs 6:33" },
+    { text: "Uw woord is een lamp voor mijn voet, een licht op mijn pad.", ref: "Psalm 119:105" },
+    { text: "Vertrouw op de Heer met heel je hart.", ref: "Spreuken 3:5" }
+  ];
+
+  const today = new Date();
+  const isSunday = today.getDay() === 0;
+
+  let chosen;
+  if (isSunday) {
+    chosen = sundayQuote;
+  } else {
+    const dayIndex = Math.floor((today - new Date(today.getFullYear(), 0, 0)) / 86400000);
+    chosen = quotes[(today.getFullYear() * 365 + dayIndex) % quotes.length];
+  }
+
+  heroQuote.textContent = `${chosen.text} (${chosen.ref})`;
+}
+
 const planningRoot = document.querySelector("#planning-root");
 const planningDataScript = document.querySelector("#planning-data");
 
