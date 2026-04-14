@@ -112,6 +112,13 @@ if (heroQuote) {
     ref: "Marcus 2:27"
   };
 
+  const specialQuotes = {
+    "1-1": { text: "Zie, Ik maak alle dingen nieuw.", ref: "Openbaring 21:5" },
+    "14-2": { text: "God is liefde, en wie in de liefde blijft, blijft in God.", ref: "1 Johannes 4:16" },
+    "1-11": { text: "Zalig de zuiveren van hart, want zij zullen God zien.", ref: "Matteüs 5:8" },
+    "25-12": { text: "Want een Kind is ons geboren, een Zoon is ons gegeven.", ref: "Jesaja 9:5" }
+  };
+
   const quotes = [
     { text: "Verkondig te pas en te onpas. Zo nodig ook met woorden.", ref: "2 Timoteüs 4:2" },
     { text: "Geef aan de keizer wat de keizer toekomt, en aan God wat God toekomt.", ref: "Matteüs 22:21" },
@@ -128,10 +135,13 @@ if (heroQuote) {
   ];
 
   const today = new Date();
+  const dateKey = `${today.getDate()}-${today.getMonth() + 1}`;
   const isSunday = today.getDay() === 0;
 
   let chosen;
-  if (isSunday) {
+  if (specialQuotes[dateKey]) {
+    chosen = specialQuotes[dateKey];
+  } else if (isSunday) {
     chosen = sundayQuote;
   } else {
     const dayIndex = Math.floor((today - new Date(today.getFullYear(), 0, 0)) / 86400000);
