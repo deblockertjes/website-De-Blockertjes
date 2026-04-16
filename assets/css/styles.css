@@ -507,6 +507,11 @@ p {
   box-shadow: var(--shadow-card);
 }
 
+.content-image--medium {
+  max-width: 28rem;
+  width: 100%;
+}
+
 .content-image--large {
   max-width: 42rem;
   width: 100%;
@@ -1757,6 +1762,11 @@ p {
     margin: 0;
   }
 
+  .content-image--intro.content-image--medium {
+    width: min(28rem, 100%);
+    max-width: 28rem;
+  }
+
   .content-image--intro.content-image--large {
     width: min(42rem, 100%);
     max-width: 42rem;
@@ -1812,6 +1822,14 @@ p {
 
   .site-footer__inner {
     grid-template-columns: 1.5fr 1fr 1fr;
+  }
+
+  .content-card--wide {
+    grid-column: span 2;
+  }
+
+  .content-card--wide p {
+    max-width: none;
   }
 }
 
