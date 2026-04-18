@@ -4,11 +4,11 @@
   --color-gold: #ff6b1a;
   --color-coral: #f08a4b;
   --color-sage: #bfc6cc;
-  --color-forest: #0d8fb8;
+  --color-forest: #30b1e6;
   --color-ink: #17242d;
   --color-white: #ffffff;
   --color-shadow: rgba(23, 36, 45, 0.12);
-  --gradient-hero: linear-gradient(160deg, rgba(229, 238, 243, 0.95), rgba(13, 143, 184, 0.16) 55%, rgba(248, 250, 252, 0.98));
+  --gradient-hero: linear-gradient(160deg, rgba(229, 238, 243, 0.95), rgba(48, 177, 230, 0.16) 55%, rgba(248, 250, 252, 0.98));
   --radius-sm: 0.9rem;
   --radius-md: 1.4rem;
   --radius-lg: 2rem;
@@ -34,7 +34,7 @@ body {
   color: var(--color-ink);
   background:
     radial-gradient(circle at top left, rgba(255, 107, 26, 0.18), transparent 30%),
-    radial-gradient(circle at top right, rgba(13, 143, 184, 0.18), transparent 25%),
+    radial-gradient(circle at top right, rgba(48, 177, 230, 0.18), transparent 25%),
     var(--color-cream);
   line-height: 1.65;
 }
@@ -106,8 +106,7 @@ a {
 .brand__logo {
   width: 3rem;
   height: 3rem;
-  border-radius: 1rem;
-  box-shadow: var(--shadow-card);
+  filter: drop-shadow(0 5px 12px rgba(31, 44, 42, 0.08));
 }
 
 .brand__text {
@@ -765,7 +764,7 @@ p {
   height: 2.75rem;
   margin-bottom: 0.9rem;
   border-radius: 0.9rem;
-  background: linear-gradient(180deg, rgba(13, 143, 184, 0.14), rgba(13, 143, 184, 0.06));
+  background: linear-gradient(180deg, rgba(48, 177, 230, 0.14), rgba(48, 177, 230, 0.06));
   box-shadow: var(--shadow-card);
 }
 
@@ -926,7 +925,7 @@ p {
 }
 
 .pillar-card__icon--liturgie {
-  background: linear-gradient(180deg, var(--color-forest), #0a7596);
+  background: linear-gradient(180deg, var(--color-forest), #2494c2);
 }
 
 .pillar-card__icon--geloof {
@@ -1634,7 +1633,6 @@ p {
 .site-footer__logo {
   width: 4rem;
   margin-bottom: 1rem;
-  border-radius: 1rem;
 }
 
 .site-footer__title {

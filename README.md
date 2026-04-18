@@ -1,4 +1,4 @@
-# De Blockertjes website
+﻿# De Blockertjes website
 
 Een eenvoudige, statische en mobielvriendelijke website voor GitHub Pages, opgebouwd met alleen HTML, CSS en een klein beetje vanilla JavaScript.
 
@@ -21,7 +21,7 @@ Een eenvoudige, statische en mobielvriendelijke website voor GitHub Pages, opgeb
 |   `-- images/
 |       |-- favicon.png
 |       |-- favicon.svg
-|       |-- logo-de-blockertjes.jpg
+|       |-- Logo_deblockertjes2.svg
 |       |-- logo-de-blockertjes.svg
 |       |-- over_ons.png
 |       `-- og-image.svg
@@ -38,7 +38,7 @@ Een eenvoudige, statische en mobielvriendelijke website voor GitHub Pages, opgeb
 
 ## Aanpassen
 
-- Het echte logo wordt nu gebruikt via `assets/images/logo-de-blockertjes.jpg`.
+- Het echte logo wordt nu gebruikt via `assets/images/Logo_deblockertjes2.svg`.
 - Als je later een scherpere PNG, SVG of bijgewerkte versie hebt, kan je dezelfde bestandsnaam vervangen zonder de HTML aan te passen.
 - Pas teksten aan in de HTML-bestanden. Er staan korte HTML-comments op enkele logische plaatsen om dat sneller te maken.
 - Alle interne links gebruiken relatieve paden, zodat de site lokaal en via GitHub Pages werkt.
@@ -47,3 +47,4 @@ Een eenvoudige, statische en mobielvriendelijke website voor GitHub Pages, opgeb
 ## Opmerking
 
 Naast het echte logo blijft ook een eenvoudige placeholder-SVG in de map staan, handig als reserve of voor snelle varianten.
+

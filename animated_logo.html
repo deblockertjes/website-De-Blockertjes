@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YouTube Intro Logo | De Blockertjes</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+      background: var(--color-cream);
+      overflow: hidden;
+    }
+
+    .logo-container {
+      width: 100%;
+      max-width: 500px;
+      padding: 2rem;
+      perspective: 1000px;
+    }
+
+    /* Animation Classes */
+    
+    /* 1. Extreme Bouncy Pop-in for the background */
+    .animate #Layer_5 {
+      animation: super-bounce 0.8s cubic-bezier(0.34, 1.8, 0.64, 1) both;
+      transform-origin: center;
+    }
+
+    /* 2. Main text slams in with bounce */
+    .animate #Layer_2 {
+      animation: super-bounce 0.8s cubic-bezier(0.34, 1.8, 0.64, 1) 0.2s both;
+      transform-origin: center;
+    }
+
+    /* 3. 3D Box pops and then starts floating */
+    .animate #Layer_4 {
+      animation: 
+        super-bounce 0.8s cubic-bezier(0.34, 1.8, 0.64, 1) 0.3s both,
+        float-rotate 4s ease-in-out 1.1s infinite;
+      transform-origin: center;
+    }
+
+    /* 4. Bottom text slides up and bounces */
+    .animate #Layer_6 {
+      animation: slide-bounce 0.8s cubic-bezier(0.34, 1.5, 0.64, 1) 0.5s both;
+      transform-origin: center;
+    }
+
+    @keyframes super-bounce {
+      0% { opacity: 0; transform: scale(0.3) rotate(-10deg); }
+      70% { transform: scale(1.1) rotate(2deg); }
+      100% { opacity: 1; transform: scale(1) rotate(0deg); }
+    }
+
+    @keyframes float-rotate {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-15px) rotate(3deg); }
+    }
+
+    @keyframes slide-bounce {
+      0% { opacity: 0; transform: translateY(50px) scale(0.8); }
+      100% { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    .controls {
+      margin-top: 3rem;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .button-group {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+    }
+  </style>
+</head>
+<body class="animate">
+
+  <div class="logo-container" id="logo-wrapper">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 517.84 696.41">
+      <defs>
+        <style>
+          .cls-1 { letter-spacing: 0em; }
+          .cls-2 { font-size: 131.95px; }
+          .cls-2, .cls-3 {
+            fill: #30b1e6;
+            font-family: Nunito-Black, Nunito;
+            font-variation-settings: 'wght' 900;
+            font-weight: 800;
+          }
+          .cls-4 { letter-spacing: 0em; }
+          .cls-5 {
+            fill: #ffefe6;
+            stroke: #f16723;
+            stroke-width: 5px;
+          }
+          .cls-5, .cls-6, .cls-7, .cls-8 { stroke-linejoin: round; }
+          .cls-9 { letter-spacing: 0em; }
+          .cls-3 { font-size: 77.18px; }
+          .cls-6 { fill: #fff; }
+          .cls-6, .cls-7, .cls-8 {
+            stroke: #231f20;
+            stroke-width: 4px;
+          }
+          .cls-10 { letter-spacing: -.06em; }
+          .cls-7 { fill: #e2e2e2; }
+          .cls-11 { letter-spacing: -.02em; }
+          .cls-12 { letter-spacing: 0em; }
+          .cls-13 { letter-spacing: .03em; }
+          .cls-14 { letter-spacing: 0em; }
+          .cls-15 { letter-spacing: 0em; }
+          .cls-8 { fill: #f16723; }
+        </style>
+      </defs>
+      <g id="Layer_6" data-name="Layer 6">
+        <text class="cls-3" transform="translate(2.49 674.8) scale(.83 1)"><tspan x="0" y="0">deb</tspan><tspan class="cls-14" x="138.53" y="0">l</tspan><tspan class="cls-9" x="165" y="0">oc</tspan><tspan class="cls-12" x="248.82" y="0">k</tspan><tspan class="cls-9" x="293.04" y="0">e</tspan><tspan class="cls-13" x="335.87" y="0">r</tspan><tspan x="371.6" y="0">tje</tspan><tspan class="cls-1" x="469.46" y="0">s</tspan><tspan x="507.36" y="0">.be</tspan></text>
+      </g>
+      <g id="Layer_5" data-name="Layer 5">
+        <rect class="cls-5" x="2.5" y="2.5" width="512.84" height="576.95" rx="70.13" ry="70.13"/>
+      </g>
+      <g id="Layer_2" data-name="Layer 2">
+        <text class="cls-2" transform="translate(189.66 181.06) scale(.78 1)"><tspan x="0" y="0">DE</tspan><tspan x="-217" y="158.35" xml:space="preserve">BL       CK</tspan><tspan x="-140.53" y="316.69">E</tspan><tspan class="cls-11" x="-59.51" y="316.69">R</tspan><tspan class="cls-10" x="31.01" y="316.69">T</tspan><tspan class="cls-15" x="108.2" y="316.69">J</tspan><tspan class="cls-4" x="159.67" y="316.69">E</tspan><tspan class="cls-15" x="239.37" y="316.69">S</tspan></text>
+      </g>
+      <g id="Layer_4" data-name="Layer 4">
+        <polygon class="cls-8" points="345.07 241.24 258.92 191.5 172.77 241.24 258.92 290.97 345.07 241.24"/>
+        <polygon class="cls-7" points="172.77 241.24 172.77 340.71 258.92 390.45 258.92 290.97 172.77 241.24"/>
+        <polygon class="cls-6" points="258.92 290.97 258.92 390.45 345.07 340.71 345.07 241.24 258.92 290.97"/>
+      </g>
+    </svg>
+  </div>
+
+  <div class="controls">
+    <div class="button-group">
+      <button onclick="replay()" class="button button--primary">Opnieuw afspelen</button>
+      <a href="index.html" class="button button--secondary">Terug naar Home</a>
+    </div>
+  </div>
+
+  <script>
+    function replay() {
+      const body = document.body;
+      body.classList.remove('animate');
+      // Force reflow
+      void body.offsetWidth;
+      body.classList.add('animate');
+    }
+  </script>
+
+</body>
+</html>

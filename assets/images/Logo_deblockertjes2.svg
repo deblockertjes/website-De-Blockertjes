@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-47.05 -15 611.95 611.95">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #30b1e6;
+        font-family: Nunito-Black, Nunito;
+        font-size: 131.95px;
+        font-variation-settings: 'wght' 900;
+        font-weight: 800;
+      }
+
+      .cls-2 {
+        letter-spacing: 0em;
+      }
+
+      .cls-3 {
+        fill: #ffefe6;
+        stroke: #f16723;
+        stroke-width: 5px;
+      }
+
+      .cls-3, .cls-4, .cls-5, .cls-6 {
+        stroke-linejoin: round;
+      }
+
+      .cls-4 {
+        fill: #fff;
+      }
+
+      .cls-4, .cls-5, .cls-6 {
+        stroke: #231f20;
+        stroke-width: 4px;
+      }
+
+      .cls-7 {
+        letter-spacing: -.06em;
+      }
+
+      .cls-5 {
+        fill: #e2e2e2;
+      }
+
+      .cls-8 {
+        letter-spacing: -.02em;
+      }
+
+      .cls-9 {
+        letter-spacing: 0em;
+      }
+
+      .cls-6 {
+        fill: #f16723;
+      }
+    </style>
+  </defs>
+  <g id="Layer_5" data-name="Layer 5">
+    <rect class="cls-3" x="2.5" y="2.5" width="512.84" height="576.95" rx="70.13" ry="70.13"/>
+  </g>
+  <g id="Layer_2" data-name="Layer 2">
+    <text class="cls-1" transform="translate(189.66 181.06) scale(.78 1)"><tspan x="0" y="0">DE</tspan><tspan x="-217" y="158.35" xml:space="preserve">BL       CK</tspan><tspan x="-140.53" y="316.69">E</tspan><tspan class="cls-8" x="-59.51" y="316.69">R</tspan><tspan class="cls-7" x="31.01" y="316.69">T</tspan><tspan class="cls-9" x="108.2" y="316.69">J</tspan><tspan class="cls-2" x="159.67" y="316.69">E</tspan><tspan class="cls-9" x="239.37" y="316.69">S</tspan></text>
+  </g>
+  <g id="Layer_4" data-name="Layer 4">
+    <polygon class="cls-6" points="345.07 241.24 258.92 191.5 172.77 241.24 258.92 290.97 345.07 241.24"/>
+    <polygon class="cls-5" points="172.77 241.24 172.77 340.71 258.92 390.45 258.92 290.97 172.77 241.24"/>
+    <polygon class="cls-4" points="258.92 290.97 258.92 390.45 345.07 340.71 345.07 241.24 258.92 290.97"/>
+  </g>
+</svg>
