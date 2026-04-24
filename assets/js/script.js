@@ -289,7 +289,14 @@ if (planningRoot && planningDataScript) {
 
       const title = document.createElement("h4");
       title.className = "planning-item__title";
-      title.textContent = item.type || item.omschrijving || "Activiteit";
+      if (item.url) {
+        const link = document.createElement("a");
+        link.href = item.url;
+        link.textContent = item.type || item.omschrijving || "Activiteit";
+        title.appendChild(link);
+      } else {
+        title.textContent = item.type || item.omschrijving || "Activiteit";
+      }
       titleRow.appendChild(title);
 
       if (item.type) {
