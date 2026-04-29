@@ -344,7 +344,7 @@ p {
 .content-card p,
 .platform-card p,
 .site-footer__text {
-  max-width: 62ch;
+  max-width: none;
 }
 
 .hero-quote {
@@ -431,7 +431,7 @@ p {
 }
 
 .section-heading--left {
-  max-width: 48rem;
+  max-width: none;
 }
 
 .section-heading--with-image {
@@ -1039,7 +1039,7 @@ p {
 
 .page-hero--with-image .section-heading--with-image {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 44rem);
+  grid-template-columns: minmax(0, 1fr) auto;
   gap: 2rem;
   align-items: center;
   padding: 2rem;
@@ -1056,7 +1056,7 @@ p {
 }
 
 .page-hero--with-image .section-heading--with-image > div:first-child {
-  max-width: 40rem;
+  max-width: none;
 }
 
 .page-hero--with-image .content-image--intro.content-image--large {
@@ -1999,7 +1999,7 @@ p {
   }
 
   .page-hero__panel {
-    max-width: 42rem;
+    max-width: none;
     padding: 1.7rem;
   }
 }
