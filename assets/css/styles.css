@@ -942,6 +942,30 @@ p {
     linear-gradient(rgba(23, 36, 45, 0.14), rgba(23, 36, 45, 0.14)) center 0.82rem / 0.72rem 0.1rem no-repeat;
 }
 
+.topic-icon--confirmation {
+  background: linear-gradient(180deg, rgba(255, 107, 26, 0.15), rgba(255, 107, 26, 0.05));
+  box-shadow: 0 0.24rem 0.65rem rgba(255, 107, 26, 0.14);
+}
+
+.topic-icon--confirmation::before {
+  left: 1.1rem;
+  top: 0.45rem;
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 50%;
+  background: var(--color-white);
+  box-shadow: 0 0 0.4rem rgba(255, 255, 255, 0.6);
+}
+
+.topic-icon--confirmation::after {
+  left: 0.85rem;
+  top: 1.05rem;
+  width: 1.05rem;
+  height: 1.2rem;
+  background: var(--color-gold);
+  clip-path: polygon(0% 0%, 100% 0%, 90% 45%, 60% 55%, 60% 85%, 90% 100%, 10% 100%, 40% 85%, 40% 55%, 10% 45%);
+}
+
 .pillar-grid {
   display: grid;
   gap: 0.85rem;
