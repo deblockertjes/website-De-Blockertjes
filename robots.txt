@@ -1,5 +1,11 @@
 User-agent: *
 Allow: /
 
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Facebot
+Allow: /
+
 # Sitemaps
 Sitemap: https://www.deblockertjes.be/sitemap.xml
