@@ -422,6 +422,14 @@ p {
   background: rgba(255, 255, 255, 0.66);
 }
 
+.button:disabled,
+.button--disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  pointer-events: none;
+  transform: none !important;
+}
+
 .section {
   padding: 0 0 3.4rem;
 }
