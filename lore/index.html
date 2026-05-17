@@ -55,7 +55,7 @@
         <p class="eyebrow">Voor Lore</p>
         <h1>Voor mijn jongste petekind</h1>
         <div class="hero__image-container" style="margin-top: 2rem; max-width: 400px; border-radius: 12px; overflow: hidden; box-shadow: var(--shadow-md);">
-          <img src="../assets/images/lore-ward.jpg" alt="Lore en Ward" style="width: 100%; display: block;">
+          <img id="lore-hero-img" src="../assets/images/lore-ward.jpg" alt="Lore en Ward" style="width: 100%; display: block;">
         </div>
         <p style="margin-top: 2rem;">
           Lieve Lore, deze pagina is speciaal voor jou. Een plekje om even stil te staan bij wat echt telt.
@@ -64,6 +64,20 @@
     </section>
 
     <section class="card-grid">
+      <article class="surface-card content-card">
+        <span class="topic-icon topic-icon--figure" aria-hidden="true"></span>
+        <h2>🎁 Jammer dat we je niet zien</h2>
+        <p>
+          We vinden het echt jammer dat we je nog nooit in de mis hebben gezien. We missen je daar!
+        </p>
+        <p>
+          Maar weet je wat? Als je er ooit geraakt, hebben we een kadootje voor je klaarliggen.
+        </p>
+        <div style="margin-top: 1rem; border-radius: 12px; overflow: hidden; box-shadow: var(--shadow-md);">
+          <img src="../assets/images/lore-kado.jpg" alt="Kado voor Lore" style="width: 100%; display: block;">
+        </div>
+      </article>
+
       <article class="surface-card content-card content-card--spotlight">
         <span class="topic-icon topic-icon--figure" aria-hidden="true"></span>
         <h2>✨ Toffe eigenschappen van Jezus</h2>
@@ -127,6 +141,7 @@
           Het is een belangrijke stap om samen over na te denken en over te praten.
         </p>
       </article>
+
     </section>
   </main>
 
@@ -160,6 +175,25 @@
   </footer>
 
   <script src="../assets/js/script.js"></script>
+  <script>
+    (function() {
+      const images = [
+        'lore-ward.jpg',
+        'lore-ward-2.jpg',
+        'lore-ward-3.jpg',
+        'lore-ward-4.jpg',
+        'lore-ward-5.jpg',
+        'lore-ward-6.jpg',
+        'lore-ward-7.jpg',
+        'lore-ward-8.jpg'
+      ];
+      const randomImage = images[Math.floor(Math.random() * images.length)];
+      const imgElement = document.getElementById('lore-hero-img');
+      if (imgElement) {
+        imgElement.src = `../assets/images/${randomImage}`;
+      }
+    })();
+  </script>
   <script data-goatcounter="https://deblockertjes.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>
