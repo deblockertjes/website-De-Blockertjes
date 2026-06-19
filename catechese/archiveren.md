@@ -42,10 +42,15 @@ Omdat de gekopieerde bestanden nu één niveau dieper in de mappenstructuur staa
     *   Voor geneste pagina's (bijv. `dankviering-[JAAR]/index.html`):
         Pas het kruimelpad aan naar:
         `Home › Catechese › [OUD_JAAR] › Praktische info › [Pagina Titel]`
+4.  **Archief-pill toevoegen op alle subpagina's:**
+    *   Voeg op alle HTML-pagina's onder `catechese/[OUD_JAAR]/` de archief-pill toe direct boven de eyebrow-tag.
+    *   *Voorbeeld:* Zoek naar `<p class="eyebrow">` en vervang dit door:
+        `<span class="archive-pill">Archief [OUD_JAAR]</span>
+          <p class="eyebrow">`
 
 ---
 
-## 4. Archief-indexpagina stylen (`catechese/[OUD_JAAR]/index.html`)
+## 5. Archief-indexpagina stylen (`catechese/[OUD_JAAR]/index.html`)
 Pas de indexpagina van het gearchiveerde jaar aan zodat deze in dezelfde tweekolomsstijl staat als voorgaande jaren:
 
 1.  **Vervang de placeholder:** Verwijder de "Archief volgt later" kaart of eventuele eerdere placeholders.
@@ -72,7 +77,7 @@ Pas de indexpagina van het gearchiveerde jaar aan zodat deze in dezelfde tweekol
 
 ---
 
-## 5. Opschonen van de root-mappen
+## 6. Opschonen van de root-mappen
 Verwijder alle jaar-specifieke submappen uit de root om vervuiling te voorkomen. **Behoud alleen de `index.html` bestanden.**
 
 **PowerShell commando's:**
@@ -84,7 +89,7 @@ Remove-Item -Path "catechese/fotos-en-documenten/*" -Exclude "index.html" -Recur
 
 ---
 
-## 6. Placeholders inrichten voor het nieuwe jaar
+## 7. Placeholders inrichten voor het nieuwe jaar
 Pas de `index.html` bestanden in de actieve root-mappen aan voor het nieuwe jaar (`[NIEUW_JAAR]`):
 
 ### A. In `catechese/praktische-info/index.html`:
@@ -113,7 +118,7 @@ Pas de `index.html` bestanden in de actieve root-mappen aan voor het nieuwe jaar
 
 ---
 
-## 7. Verificatie
+## 8. Verificatie
 Controleer na de uitvoering of:
 1.  De nieuwe gearchiveerde pagina's (onder `catechese/[OUD_JAAR]/`) correct laden en de stylesheets/afbeeldingen niet gebroken zijn.
 2.  De navigatieknoppen in de header en footer naar de juiste (nieuwe) root-mappen en archieven linken.
