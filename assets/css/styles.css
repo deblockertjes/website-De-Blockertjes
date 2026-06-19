@@ -3,9 +3,11 @@
   --color-sand: #e5eef3;
   --color-gold: #ff6b1a;
   --color-coral: #f08a4b;
+  --color-terracotta: #d4520e;
   --color-sage: #bfc6cc;
   --color-forest: #30b1e6;
   --color-ink: #17242d;
+  --color-heading: #283a48;
   --color-white: #ffffff;
   --color-shadow: rgba(23, 36, 45, 0.12);
   --gradient-hero: linear-gradient(160deg, rgba(229, 238, 243, 0.95), rgba(48, 177, 230, 0.16) 55%, rgba(248, 250, 252, 0.98));
@@ -317,22 +319,26 @@ h3 {
   margin-top: 0;
   font-family: "Segoe UI", "Avenir Next", sans-serif;
   line-height: 1.15;
-  color: var(--color-ink);
+  color: var(--color-heading);
 }
 
 h1 {
   font-size: clamp(1.95rem, 10vw, 4.4rem);
   margin-bottom: 1rem;
+  font-weight: 600;
+  color: var(--color-terracotta);
 }
 
 h2 {
   font-size: clamp(1.55rem, 3vw, 2.25rem);
   margin-bottom: 0.8rem;
+  font-weight: 600;
 }
 
 h3 {
   font-size: 1.2rem;
   margin-bottom: 0.65rem;
+  font-weight: 500;
 }
 
 p {
