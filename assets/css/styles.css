@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800;900&display=swap');
+
 :root {
   --color-cream: #f8fafc;
   --color-sand: #e5eef3;
@@ -317,7 +319,7 @@ h1,
 h2,
 h3 {
   margin-top: 0;
-  font-family: "Segoe UI", "Avenir Next", sans-serif;
+  font-family: "Nunito", "Segoe UI", "Avenir Next", sans-serif;
   line-height: 1.15;
   color: var(--color-heading);
 }
