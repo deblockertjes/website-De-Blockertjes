@@ -1423,6 +1423,12 @@ p {
   color: #4f616a;
 }
 
+.planning-badge--optional {
+  background: rgba(240, 138, 75, 0.14);
+  color: #b84914;
+  border: 1px dashed rgba(212, 82, 14, 0.45);
+}
+
 .planning-item__description {
   margin-bottom: 0;
 }

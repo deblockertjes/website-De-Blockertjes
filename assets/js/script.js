@@ -216,7 +216,7 @@ if (planningRoot && planningDataScript) {
   const groupedByMonth = planningItems.reduce((groups, item) => {
     const key = item.parsedDate
       ? new Intl.DateTimeFormat("nl-BE", { month: "long", year: "numeric" }).format(item.parsedDate)
-      : "Onbekende datum";
+      : "Nog te bepalen";
 
     if (!groups.has(key)) {
       groups.set(key, []);
@@ -306,6 +306,13 @@ if (planningRoot && planningDataScript) {
         typeBadge.className = `planning-badge ${mappedClass}`;
         typeBadge.textContent = item.type;
         titleRow.appendChild(typeBadge);
+      }
+
+      if (item.optioneel) {
+        const optBadge = document.createElement("span");
+        optBadge.className = "planning-badge planning-badge--optional";
+        optBadge.textContent = "Optioneel";
+        titleRow.appendChild(optBadge);
       }
 
       meta.appendChild(titleRow);
