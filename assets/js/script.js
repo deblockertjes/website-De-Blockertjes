@@ -104,6 +104,93 @@ randomHeroSections.forEach((section) => {
   }
 });
 
+/**
+ * Bepaalt het huidige seizoen (meteorologisch of astronomisch).
+ * Ondersteunt ook URL parameter override: ?seizoen=lente|zomer|herfst|winter
+ * @param {Date} [date=new Date()]
+ * @param {'meteorological'|'astronomical'} [mode='meteorological']
+ * @returns {'lente'|'zomer'|'herfst'|'winter'}
+ */
+function getHuidigSeizoen(date = new Date(), mode = "meteorological") {
+  const urlParams = new URLSearchParams(window.location.search);
+  const paramSeizoen = urlParams.get("seizoen") || urlParams.get("season");
+  if (paramSeizoen) {
+    const s = paramSeizoen.toLowerCase();
+    if (["lente", "spring"].includes(s)) return "lente";
+    if (["zomer", "summer"].includes(s)) return "zomer";
+    if (["herfst", "autumn", "fall"].includes(s)) return "herfst";
+    if (["winter"].includes(s)) return "winter";
+  }
+
+  const maand = date.getMonth(); // 0 = jan, ..., 11 = dec
+  const dag = date.getDate();
+
+  if (mode === "astronomical") {
+    const md = (maand + 1) * 100 + dag;
+    if (md >= 321 && md < 621) return "lente";
+    if (md >= 621 && md < 923) return "zomer";
+    if (md >= 923 && md < 1221) return "herfst";
+    return "winter";
+  }
+
+  // Meteorologisch:
+  // Lente: maart, april, mei (maanden 2, 3, 4)
+  // Zomer: juni, juli, augustus (maanden 5, 6, 7)
+  // Herfst: september, oktober, november (maanden 8, 9, 10)
+  // Winter: december, januari, februari (maanden 11, 0, 1)
+  if (maand >= 2 && maand <= 4) return "lente";
+  if (maand >= 5 && maand <= 7) return "zomer";
+  if (maand >= 8 && maand <= 10) return "herfst";
+  return "winter";
+}
+
+const seasonalHeroSections = document.querySelectorAll("[data-seasonal-hero]");
+
+if (seasonalHeroSections.length) {
+  const defaultAlts = {
+    lente: "Groepsfoto van De Blockertjes in South Park stijl aan de Sint-Annakerk (lente)",
+    zomer: "Groepsfoto van De Blockertjes in South Park stijl aan de Sint-Annakerk (zomer)",
+    herfst: "Groepsfoto van De Blockertjes in South Park stijl aan de Sint-Annakerk (herfst)",
+    winter: "Groepsfoto van De Blockertjes in South Park stijl aan de Sint-Annakerk (winter)"
+  };
+
+  seasonalHeroSections.forEach((section) => {
+    const mode = section.dataset.seasonMode || "meteorological";
+    const season = getHuidigSeizoen(new Date(), mode);
+
+    const imageMap = {
+      lente: section.dataset.seasonLente || section.dataset.seasonSpring,
+      zomer: section.dataset.seasonZomer || section.dataset.seasonSummer,
+      herfst: section.dataset.seasonHerfst || section.dataset.seasonAutumn,
+      winter: section.dataset.seasonWinter
+    };
+
+    const chosenImage = imageMap[season];
+
+    if (!chosenImage) {
+      return;
+    }
+
+    section.setAttribute("data-current-season", season);
+
+    if (section.classList.contains("page-hero--image")) {
+      section.style.backgroundImage = `linear-gradient(180deg, rgba(23, 36, 45, 0.08), rgba(23, 36, 45, 0.18)), url("${chosenImage}")`;
+      return;
+    }
+
+    const heroImage = section.querySelector(".content-image--intro");
+    if (heroImage) {
+      heroImage.src = chosenImage;
+      const customAlt = section.dataset[`seasonAlt${season.charAt(0).toUpperCase() + season.slice(1)}`];
+      if (customAlt) {
+        heroImage.alt = customAlt;
+      } else if (defaultAlts[season]) {
+        heroImage.alt = defaultAlts[season];
+      }
+    }
+  });
+}
+
 const heroQuote = document.querySelector(".hero-quote");
 
 if (heroQuote) {
