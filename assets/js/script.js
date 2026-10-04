@@ -265,20 +265,21 @@ if (planningRoot && planningDataScript) {
   };
 
   const parseDutchDate = (value) => {
-    const match = value.trim().toLowerCase().match(/^(\d{1,2})\s+([a-z]+)\s+(\d{4})$/);
+    const match = value.trim().toLowerCase().match(/^(?:(\d{1,2})\s*(?:of|en|-|\/)\s*)?(\d{1,2})\s+([a-z]+)\s+(\d{4})$/);
 
     if (!match) {
       return null;
     }
 
-    const [, day, monthName, year] = match;
+    const [, startDay, endDay, monthName, year] = match;
     const monthIndex = monthMap[monthName];
 
     if (monthIndex === undefined) {
       return null;
     }
 
-    return new Date(Number(year), monthIndex, Number(day));
+    const day = startDay ? Number(startDay) : Number(endDay);
+    return new Date(Number(year), monthIndex, day);
   };
 
   const slugify = (value) =>
