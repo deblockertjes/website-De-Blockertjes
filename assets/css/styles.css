@@ -479,6 +479,113 @@ p {
   max-width: 62rem;
 }
 
+.content-section h3 {
+  margin-top: 1.75rem;
+}
+
+.content-section p a {
+  color: var(--color-forest);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.content-section p a:hover {
+  color: var(--color-terracotta);
+}
+
+/* Afspraken en praktische regelingen cards */
+.afspraak-card {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  border-radius: var(--radius-lg);
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(23, 36, 45, 0.08);
+  box-shadow: var(--shadow-card);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.afspraak-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-soft);
+}
+
+.afspraak-card__header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.15rem;
+}
+
+.afspraak-card__header h3 {
+  margin: 0;
+  text-align: left;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--color-heading);
+}
+
+.afspraak-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.2rem;
+  height: 3.2rem;
+  border-radius: 1rem;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(23, 36, 45, 0.06);
+}
+
+.afspraak-icon svg {
+  width: 1.6rem;
+  height: 1.6rem;
+}
+
+.afspraak-icon--time {
+  background: linear-gradient(135deg, rgba(48, 177, 230, 0.2), rgba(48, 177, 230, 0.08));
+  color: #0b729d;
+}
+
+.afspraak-icon--care {
+  background: linear-gradient(135deg, rgba(240, 138, 75, 0.22), rgba(212, 82, 14, 0.08));
+  color: #c04c0b;
+}
+
+.afspraak-icon--tech {
+  background: linear-gradient(135deg, rgba(92, 53, 176, 0.18), rgba(92, 53, 176, 0.06));
+  color: #5c35b0;
+}
+
+.afspraak-icon--chat {
+  background: linear-gradient(135deg, rgba(255, 107, 26, 0.22), rgba(255, 107, 26, 0.08));
+  color: #d4520e;
+}
+
+.afspraak-card__body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  flex-grow: 1;
+  font-size: 0.98rem;
+  line-height: 1.6;
+  color: var(--color-ink);
+}
+
+.afspraak-card__body p {
+  margin: 0;
+}
+
+.afspraak-card__highlight {
+  margin-top: auto;
+  padding: 0.85rem 1rem;
+  border-radius: var(--radius-sm);
+  background: rgba(48, 177, 230, 0.09);
+  border-left: 3px solid var(--color-forest);
+  font-weight: 600;
+  color: var(--color-heading);
+  font-size: 0.95rem;
+}
+
 .stack-grid--single {
   grid-template-columns: 1fr;
 }
