@@ -377,9 +377,14 @@ if (planningRoot && planningDataScript) {
 
       const title = document.createElement("h4");
       title.className = "planning-item__title";
+      const isExternalUrl = Boolean(item.url && /^https?:\/\//i.test(item.url));
       if (item.url) {
         const link = document.createElement("a");
         link.href = item.url;
+        if (isExternalUrl) {
+          link.target = "_blank";
+          link.rel = "noreferrer";
+        }
         link.textContent = item.type || item.omschrijving || "Activiteit";
         title.appendChild(link);
       } else {
@@ -411,6 +416,10 @@ if (planningRoot && planningDataScript) {
         if (item.url) {
           const descLink = document.createElement("a");
           descLink.href = item.url;
+          if (isExternalUrl) {
+            descLink.target = "_blank";
+            descLink.rel = "noreferrer";
+          }
           descLink.textContent = item.omschrijving;
           description.appendChild(descLink);
         } else {
