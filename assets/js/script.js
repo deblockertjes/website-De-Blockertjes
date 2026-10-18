@@ -408,7 +408,14 @@ if (planningRoot && planningDataScript) {
       if (item.omschrijving) {
         const description = document.createElement("p");
         description.className = "planning-item__description";
-        description.textContent = item.omschrijving;
+        if (item.url) {
+          const descLink = document.createElement("a");
+          descLink.href = item.url;
+          descLink.textContent = item.omschrijving;
+          description.appendChild(descLink);
+        } else {
+          description.textContent = item.omschrijving;
+        }
         meta.appendChild(description);
       }
 
