@@ -62,6 +62,9 @@
             <a class="button button--primary" href="#planning">
               Bekijk de planning 2026-2027 &darr;
             </a>
+            <a class="button button--secondary" href="#afspraken">
+              Bekijk de afspraken &darr;
+            </a>
           </div>
         </div>
         <div class="planning-hero__icons" aria-hidden="true">
@@ -76,7 +79,15 @@
     </section>
 
     <section class="content-flow">
-      <article class="content-section">
+      <article id="planning" class="content-section" style="scroll-margin-top: 5.5rem;">
+        <div class="section-heading section-heading--left" style="margin-bottom: 1rem;">
+          <p class="eyebrow">Kalender</p>
+          <h2>Planning 2026-2027</h2>
+        </div>
+        <div id="planning-root" class="planning-root"></div>
+      </article>
+
+      <article id="afspraken" class="content-section" style="scroll-margin-top: 5.5rem;">
         <div class="section-heading section-heading--left" style="margin-bottom: 1.5rem;">
           <p class="eyebrow">Afspraken</p>
           <h2>Afspraken en praktische regelingen</h2>
@@ -175,14 +186,6 @@
             </div>
           </article>
         </div>
-      </article>
-
-      <article id="planning" class="content-section" style="margin-top: 1rem; scroll-margin-top: 5.5rem;">
-        <div class="section-heading section-heading--left" style="margin-bottom: 1rem;">
-          <p class="eyebrow">Kalender</p>
-          <h2>Planning 2026-2027</h2>
-        </div>
-        <div id="planning-root" class="planning-root"></div>
       </article>
     </section>
   </main>
